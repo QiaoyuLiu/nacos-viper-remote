@@ -39,6 +39,7 @@ func NewNacosConfigManager(option *Option) (*nacosConfigManager, error) {
 		}
 	} else {
 		clientConfig = option.NacosConfig
+		clientConfig.NamespaceId = option.NamespaceId
 	}
 
 	if option.Auth != nil && option.Auth.Enable {
