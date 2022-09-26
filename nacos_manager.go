@@ -52,7 +52,7 @@ func NewNacosConfigManager(option *Option) (*nacosConfigManager, error) {
 	}
 	client, err := clients.CreateConfigClient(map[string]interface{}{
 		"serverConfigs": serverConfigs,
-		"clientConfig":  clientConfig,
+		"clientConfig":  *clientConfig,
 	})
 	if err != nil {
 		logger.Error(err.Error())
