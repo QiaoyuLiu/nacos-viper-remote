@@ -1,12 +1,15 @@
 package nacos_viper_remote
 
+import "github.com/nacos-group/nacos-sdk-go/common/constant"
+
 type Option struct {
-	Url         string `mapstructure:"url"`
-	Port        uint64 `mapstructure:"port"`
-	NamespaceId string `mapstructure:"namespace"`
-	GroupName   string `mapstructure:"group"`
-	Config      Config `mapstructure:"configserver"`
-	Auth        *Auth  `mapstructure:"auth"`
+	Url         string                 `mapstructure:"url"`
+	Port        uint64                 `mapstructure:"port"`
+	NamespaceId string                 `mapstructure:"namespace"`
+	GroupName   string                 `mapstructure:"group"`
+	Config      Config                 `mapstructure:"configserver"`
+	Auth        *Auth                  `mapstructure:"auth"`
+	NacosConfig *constant.ClientConfig `mapstructure:"-"`
 }
 
 type Config struct {
